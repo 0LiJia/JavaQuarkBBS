@@ -4,10 +4,6 @@ import com.quark.common.base.BaseService;
 import com.quark.common.entity.AdminUser;
 import org.springframework.data.domain.Page;
 
-/**
- * Created by lhr on 17-8-1.
- */
-
 public interface AdminUserService extends BaseService<AdminUser>{
 
     /**

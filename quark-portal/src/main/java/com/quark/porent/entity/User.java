@@ -3,12 +3,6 @@ package com.quark.porent.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * @Author LHR
- * Create By 2017/8/18
- * <p>
- * 用户
- */
 public class User implements Serializable {
 
     private Integer id;

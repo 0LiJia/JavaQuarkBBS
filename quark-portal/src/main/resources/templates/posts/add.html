@@ -36,7 +36,7 @@
                         <label class="layui-form-label">标签选择框</label>
                         <div class="layui-input-block">
                             <div class="layui-input-inline">
-                                <select name="modules" lay-verify="required" lay-search="" id="label_select" name="labelId">
+                                <select id="label_select" name="modules" lay-verify="required" lay-search=""  name="labelId" lay-filter="tag">
                                     <option value="">直接选择或搜索选择</option>
 
                                 </select>
@@ -58,18 +58,23 @@
 <!--<script th:src="@{/js/jquery.cookie.js}"></script>-->
 <!--<script th:src="@{/js/quark_api.js}"></script>-->
 <script>
-    //添加option
+    //添加 option,
     $.get(quark_label_getall_api, function (data) {
-        var htm = "";
+        var sOption = "";
+        var ddHtml = '<dd lay-value="" class="layui-select-tips layui-this">直接选择或搜索选择</dd>';
+        var form = layui.form;
         if (data.status == 200) {
             for (var i = 0; i < data.data.length; i++) {
-                htm += "<option value='" + data.data[i].id + "'>" + data.data[i].name + "</option>"
+                ddHtml += '<dd lay-value="' + data.data[i].id + '">' + data.data[i].name + '</dd>'
+                sOption += "<option value='" + data.data[i].id + "'>" + data.data[i].name + "</option>"
             }
         } else {
             layer.msg(data.error, {icon: 5});
         }
 
-        $("#label_select").append(htm);
+        $("#label_select").append(sOption);
+        $("#label_select").next().children().eq(1).html(ddHtml);
+        form.render("select");
     });
 
     layui.use(['form', 'layedit'], function () {

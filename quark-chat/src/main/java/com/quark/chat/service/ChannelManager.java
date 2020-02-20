@@ -18,11 +18,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-/**
- * @Author : ChinaLHR
- * @Date : Create in 22:00 2017/10/23
- * @Email : 13435500980@163.com
- */
 @Service
 public class ChannelManager {
 

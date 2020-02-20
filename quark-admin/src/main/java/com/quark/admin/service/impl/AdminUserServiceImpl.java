@@ -19,9 +19,6 @@ import java.util.*;
 
 import static java.util.stream.Collectors.toSet;
 
-/**
- * Created by lhr on 17-8-1.
- */
 @Service
 @Transactional
 public class AdminUserServiceImpl extends BaseServiceImpl<AdminUserDao, AdminUser> implements AdminUserService {

@@ -1,5 +1,7 @@
 package com.quark.common.dto;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
@@ -8,27 +10,12 @@ import java.io.Serializable;
  * @Author LHR
  * Create By 2017/9/6
  */
+@Data
 public class SocketMessage implements Serializable{
 
     private Integer notice;
 
     private String message;
-
-    public Integer getNotice() {
-        return notice;
-    }
-
-    public void setNotice(Integer notice) {
-        this.notice = notice;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
 
     public SocketMessage(Integer notice, String message) {
         this.notice = notice;

@@ -2,15 +2,14 @@ package com.quark.common.dto;
 
 
 import com.quark.common.enums.StateEnum;
+import lombok.Data;
 
 import java.io.Serializable;
 
 /**
  * Rest响应数据
- *
- * @Author LHR
- * Create By 2017/8/11
  */
+@Data
 public class QuarkResult implements Serializable {
 
     /**
@@ -37,46 +36,6 @@ public class QuarkResult implements Serializable {
      * 本页返回数量
      */
     private Integer total;
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public Object getData() {
-        return data;
-    }
-
-    public void setData(Object data) {
-        this.data = data;
-    }
-
-    public String getError() {
-        return error;
-    }
-
-    public void setError(String error) {
-        this.error = error;
-    }
-
-    public long getPageSize() {
-        return pageSize;
-    }
-
-    public void setPageSize(long pageSize) {
-        this.pageSize = pageSize;
-    }
-
-    public Integer getTotal() {
-        return total;
-    }
-
-    public void setTotal(Integer total) {
-        this.total = total;
-    }
 
     /**
      * 请求成功

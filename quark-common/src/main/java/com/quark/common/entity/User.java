@@ -2,20 +2,17 @@ package com.quark.common.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.oracle.webservices.internal.api.databinding.DatabindingMode;
 import com.quark.common.utils.Constants;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * @Author LHR
- * Create By 2017/8/18
- *
- * 用户
- */
 @Entity
 @Table(name="quark_user")
+@Data
 public class User implements Serializable {
 
     @Id
@@ -36,7 +33,7 @@ public class User implements Serializable {
     private String password;
 
     // 头像
-    private String icon ="http://127.0.0.1/images/upload/default.png";
+    private String icon ="http://47.106.108.30:9999/group1/M00/00/00/L2psHl44LneAEgHAAAARSHirAps496.tmp";
 
     // 个人签名
     private String signature;
@@ -53,89 +50,4 @@ public class User implements Serializable {
     @Column(nullable = false)
     private Integer enable = 1;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-
-    public String getSignature() {
-        return signature;
-    }
-
-    public void setSignature(String signature) {
-        this.signature = signature;
-    }
-
-    public Date getInitTime() {
-        return initTime;
-    }
-
-    public void setInitTime(Date initTime) {
-        this.initTime = initTime;
-    }
-
-    public Integer getSex() {
-        return sex;
-    }
-
-    public void setSex(Integer sex) {
-        this.sex = sex;
-    }
-
-    public Integer getEnable() {
-        return enable;
-    }
-
-    public void setEnable(Integer enable) {
-        this.enable = enable;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", Icon='" + icon + '\'' +
-                ", signature='" + signature + '\'' +
-                ", initTime=" + initTime +
-                ", sex=" + sex +
-                ", enable=" + enable +
-                '}';
-    }
 }

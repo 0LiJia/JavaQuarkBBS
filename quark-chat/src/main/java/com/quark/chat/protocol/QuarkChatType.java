@@ -1,9 +1,6 @@
 package com.quark.chat.protocol;
 
 /**
- * @Author : ChinaLHR
- * @Date : Create in 16:37 2017/10/23
- * @Email : 13435500980@163.com
  *
  * 消息类型的定义
  */

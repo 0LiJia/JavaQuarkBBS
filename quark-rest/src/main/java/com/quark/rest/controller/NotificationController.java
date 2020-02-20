@@ -15,10 +15,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * @Author LHR
- * Create By 2017/9/6
- */
 @Api("通知消息接口")
 @RequestMapping("/notification")
 @RestController
@@ -38,7 +34,7 @@ public class NotificationController extends BaseController {
     public QuarkResult getAllNotification(@PathVariable("uid") Integer uid) {
         QuarkResult result = restProcessor(() -> {
             User user = userService.findOne(uid);
-            if (user==null) return QuarkResult.warn("用户不存在！");
+            if (user == null) return QuarkResult.warn("用户不存在！");
             List<Notification> list = notificationService.findByUser(user);
             return QuarkResult.ok(list);
         });

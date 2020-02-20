@@ -16,10 +16,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * @Author LHR
- * Create By 2017/9/3
- */
 @Service
 public class PostsServiceImpl extends BaseServiceImpl<PostsDao,Posts> implements PostsService {
 
@@ -44,8 +40,8 @@ public class PostsServiceImpl extends BaseServiceImpl<PostsDao,Posts> implements
                 if (posts.getId()!=null) list.add(criteriaBuilder.equal($id,posts.getId()));
                 if (posts.getTitle()!=null) list.add(criteriaBuilder.like($title,"%" + posts.getTitle() + "%"));
                 if (posts.getUser()!=null) list.add(criteriaBuilder.equal($user,posts.getUser()));
-                if (posts.getTop()==true) list.add(criteriaBuilder.equal($top,true));
-                if (posts.getGood()==true) list.add(criteriaBuilder.equal($good,true));
+                if (posts.isTop()) list.add(criteriaBuilder.equal($top,true));
+                if (posts.isGood()) list.add(criteriaBuilder.equal($good,true));
 
                 Predicate predicate = criteriaBuilder.and(list.toArray(new Predicate[list.size()]));
 
@@ -60,7 +56,7 @@ public class PostsServiceImpl extends BaseServiceImpl<PostsDao,Posts> implements
     public void changeTop(Integer[] ids) {
         List<Posts> all = findAll(Arrays.asList(ids));
         for (Posts p :all) {
-            if (p.getTop()==false) p.setTop(true);
+            if (!p.isTop()) p.setTop(true);
             else p.setTop(false);
         }
         save(all);
@@ -70,7 +66,7 @@ public class PostsServiceImpl extends BaseServiceImpl<PostsDao,Posts> implements
     public void changeGood(Integer[] ids) {
         List<Posts> all = findAll(Arrays.asList(ids));
         for (Posts p :all) {
-            if (p.getGood()==false) p.setGood(true);
+            if (!p.isGood()) p.setGood(true);
             else p.setGood(false);
         }
         save(all);

@@ -14,10 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * @Author LHR
- * Create By 2017/8/31
- */
 @Api(value = "排行榜接口", description = "七天内热帖排行榜,七天内新注册用户排行榜")
 @RestController
 @RequestMapping("/rank")
@@ -54,7 +50,8 @@ public class RankController extends BaseController {
     public QuarkResult getNewUser() {
         QuarkResult result = restProcessor(() -> {
             List<Object> users = redisService.getString(REDIS_RANK_USERS);
-            if (users != null) return QuarkResult.ok(users);
+            if (users != null)
+                return QuarkResult.ok(users);
 
             users = rankService.findUserRank();
             redisService.cacheString(REDIS_RANK_USERS, users, 1);

@@ -4,10 +4,8 @@ import com.quark.common.entity.AdminUser;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.util.ByteSource;
 
-/**
- * Created by lhr on 17-8-2.
- */
 public class PasswordHelper {
+
     //private RandomNumberGenerator randomNumberGenerator = new SecureRandomNumberGenerator();
     private String algorithmName = "md5";
     private int hashIterations = 2;

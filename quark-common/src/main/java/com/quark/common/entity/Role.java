@@ -1,18 +1,20 @@
 package com.quark.common.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by lhr on 17-7-31.
- */
-
 @Entity
 @Table(name = "quark_role")
+@Getter
+@Setter
 public class Role implements Serializable{
 
     @Id
@@ -42,54 +44,6 @@ public class Role implements Serializable{
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<Permission> permissions = new HashSet<>();
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Set<AdminUser> getAdminUsers() {
-        return adminUsers;
-    }
-
-    public void setAdminUsers(Set<AdminUser> adminUsers) {
-        this.adminUsers = adminUsers;
-    }
-
-    public Set<Permission> getPermissions() {
-        return permissions;
-    }
-
-    public void setPermissions(Set<Permission> permissions) {
-        this.permissions = permissions;
-    }
-
-    public Integer getSelected() {
-        return selected;
-    }
-
-    public void setSelected(Integer selected) {
-        this.selected = selected;
-    }
-
     @Override
     public String toString() {
         return "Role{" +
@@ -99,4 +53,5 @@ public class Role implements Serializable{
                 ", selected=" + selected +
                 '}';
     }
+
 }

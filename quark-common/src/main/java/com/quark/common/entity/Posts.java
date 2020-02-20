@@ -2,19 +2,23 @@ package com.quark.common.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.quark.common.utils.Constants;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @Author LHR
- * Create By 2017/8/18
- *
  * 帖子
  */
 @Entity
 @Table(name = "quark_posts")
+@Getter
+@Setter
 public class Posts implements Serializable {
 
     @Id
@@ -48,85 +52,13 @@ public class Posts implements Serializable {
     //与用户的关联关系
     @ManyToOne
     @JoinColumn(nullable = false, name = "user_id")
+    @NotFound(action = NotFoundAction.IGNORE)
     private User user;
 
 
     //回复数量
     @Column(name = "reply_count")
     private int replyCount = 0;
-
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Label getLabel() {
-        return label;
-    }
-
-    public void setLabel(Label label) {
-        this.label = label;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public Date getInitTime() {
-        return initTime;
-    }
-
-    public void setInitTime(Date initTime) {
-        this.initTime = initTime;
-    }
-
-    public Boolean getTop() {
-        return top;
-    }
-
-    public void setTop(Boolean top) {
-        this.top = top;
-    }
-
-    public Boolean getGood() {
-        return good;
-    }
-
-    public void setGood(Boolean good) {
-        this.good = good;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public int getReplyCount() {
-        return replyCount;
-    }
-
-    public void setReplyCount(int replyCount) {
-        this.replyCount = replyCount;
-    }
 
     @Override
     public String toString() {

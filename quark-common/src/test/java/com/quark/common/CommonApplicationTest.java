@@ -4,6 +4,8 @@ import com.quark.common.dao.LabelDao;
 import com.quark.common.dao.NotificationDao;
 import com.quark.common.dao.PostsDao;
 import com.quark.common.dao.UserDao;
+import com.quark.common.entity.AdminUser;
+import com.quark.common.entity.Role;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,5 +47,11 @@ public class CommonApplicationTest {
 //        list.forEach(t->{
 //            System.out.println(t.getPosts().getTitle());
 //        });
+    }
+
+    @Test
+    public void toStr() {
+        System.out.println(new Role().toString());
+
     }
 }

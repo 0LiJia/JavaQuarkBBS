@@ -16,11 +16,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-/**
- * @Author : ChinaLHR
- * @Date : Create in 22:14 2017/10/19
- * @Email : 13435500980@163.com
- */
 @SpringBootApplication
 @EnableCaching//缓存支持
 public class ChatApplication  implements CommandLineRunner {

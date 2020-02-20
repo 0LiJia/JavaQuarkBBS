@@ -8,9 +8,6 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @Author LHR
- * Create By 2017/8/18
- *
  * 收藏
  */
 @Entity
@@ -35,35 +32,4 @@ public class Collect implements Serializable{
     @JsonFormat(pattern = Constants.DATETIME_FORMAT)
     private Date initTime;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Posts getPosts() {
-        return posts;
-    }
-
-    public void setPosts(Posts posts) {
-        this.posts = posts;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Date getInitTime() {
-        return initTime;
-    }
-
-    public void setInitTime(Date initTime) {
-        this.initTime = initTime;
-    }
 }

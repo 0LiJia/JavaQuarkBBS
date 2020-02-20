@@ -2,18 +2,20 @@ package com.quark.common.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.quark.common.utils.Constants;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
 
 /**
- * @Author LHR
- * Create By 2017/8/18
  *
  * 通知
  */
 @Entity
 @Table(name = "quark_notification")
+@Getter
+@Setter
 public class Notification {
 
     @Id
@@ -43,51 +45,4 @@ public class Notification {
     @JsonFormat(pattern = Constants.DATETIME_FORMAT, timezone = "GMT+8")
     private Date initTime;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public boolean isRead() {
-        return isRead;
-    }
-
-    public void setRead(boolean read) {
-        isRead = read;
-    }
-
-    public User getTouser() {
-        return touser;
-    }
-
-    public void setTouser(User touser) {
-        this.touser = touser;
-    }
-
-    public User getFromuser() {
-        return fromuser;
-    }
-
-    public void setFromuser(User fromuser) {
-        this.fromuser = fromuser;
-    }
-
-    public Posts getPosts() {
-        return posts;
-    }
-
-    public void setPosts(Posts posts) {
-        this.posts = posts;
-    }
-
-    public Date getInitTime() {
-        return initTime;
-    }
-
-    public void setInitTime(Date initTime) {
-        this.initTime = initTime;
-    }
 }

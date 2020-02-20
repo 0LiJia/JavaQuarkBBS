@@ -56,11 +56,11 @@ function applyHeader() {
                 "</a>"+
                 "<div class='nav'>"+
                 "<a href='/user/setting'><i class='iconfont icon-shezhi'></i>设置</a>"+
-                "<a href='' onclick='logout()'><i class='iconfont icon-tuichu' style='top: 0; font-size: 22px;'></i>退了</a>"+
+                "<a href='' onclick='logout()'><i class='iconfont icon-tuichu' style='top: 0; font-size: 22px;'></i>离开</a>"+
                 "</div>";
         }else{
             htm ="<a class='unlogin' href='#'><i class='iconfont icon-touxiang'></i></a>"+
-                "<span><a href='/user/login'>登入</a><a href='/user/register'>注册</a></span>";
+                "<span><a href='/user/login'>登录</a><a href='/user/register'>注册</a></span>";
         }
 
         $(".nav-user").append(htm);

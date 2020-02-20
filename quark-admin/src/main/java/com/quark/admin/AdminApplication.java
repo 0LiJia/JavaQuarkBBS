@@ -1,5 +1,6 @@
 package com.quark.admin;
 
+import com.quark.common.CommonApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
@@ -12,9 +13,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-/**
- * Created by lhr on 17-7-31.
- */
 @SpringBootApplication
 @EnableCaching//缓存支持
 public class AdminApplication {

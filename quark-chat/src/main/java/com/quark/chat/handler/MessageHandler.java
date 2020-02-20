@@ -17,10 +17,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
- * @Author : ChinaLHR
- * @Date : Create in 14:48 2017/10/24
- * @Email : 13435500980@163.com
- *
  * 消息处理Handler
  */
 @ChannelHandler.Sharable
