@@ -33,7 +33,7 @@ public class User implements Serializable {
     private String password;
 
     // 头像
-    private String icon ="http://47.106.108.30:9999/group1/M00/00/00/L2psHl44LneAEgHAAAARSHirAps496.tmp";
+    private String icon ="http://127.0.0.1:9999/group1/M00/00/00/L2psHl44LneAEgHAAAARSHirAps496.tmp";
 
     // 个人签名
     private String signature;
