@@ -1,7 +1,5 @@
 package com.quark.rest.utils;
 
-
-import com.quark.common.entity.UploadFile;
 import com.quark.rest.exception.FastDFSException;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;

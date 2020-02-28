@@ -5,7 +5,6 @@ import com.quark.common.exception.ServiceProcessException;
 import com.quark.rest.exception.FastDFSException;
 import com.quark.rest.service.UserService;
 import com.quark.rest.utils.FastDFSClient;
-import com.quark.rest.utils.FileUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +29,11 @@ public class UploadController {
         UploadResult result = null;
         if (!file.isEmpty()) {
             try {
-                String s = FastDFSClient.getInstance().uploadFile((File)file);
-              result = new UploadResult(0, new UploadResult.Data(s));
+                File tmp = File.createTempFile("tmp", null);
+                file.transferTo(tmp);
+                String s = FastDFSClient.getInstance().uploadFile((tmp));
+                tmp.delete();
+                result = new UploadResult(0, new UploadResult.Data(s));
                 return result;
             } catch (IOException | FastDFSException e) {
                 e.printStackTrace();
